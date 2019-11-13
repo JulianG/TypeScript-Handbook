@@ -1051,7 +1051,7 @@ When `T` or `U` contains type variables, whether to resolve to `X` or `Y`, or to
 As an example of some types that are immediately resolved, we can take a look at the following example:
 
 ```ts
-declare function f<T extends boolean>(x: T): T extends true ? string : number;
+declare function foo<T extends boolean>(x: T): T extends true ? string : number;
 
 // Type is 'string | number
 let x = f(Math.random() < 0.5)
@@ -1084,7 +1084,7 @@ interface Foo {
     propB: boolean;
 }
 
-declare function f<T>(x: T): T extends Foo ? string : number;
+declare function foo<T>(x: T): T extends Foo ? string : number;
 
 function foo<U>(x: U) {
     // Has type 'U extends Foo ? string : number'
